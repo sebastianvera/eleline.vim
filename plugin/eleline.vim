@@ -55,7 +55,7 @@ function! ElelineFsize(f) abort
 endfunction
 
 function! ElelineCurFname() abort
-  return &filetype ==# 'startify' ? '' : '  '.expand('%:p:t').' '
+  return &filetype ==# 'startify' ? '' : '  '.expand('%:~:.').' '
 endfunction
 
 function! ElelineError() abort
