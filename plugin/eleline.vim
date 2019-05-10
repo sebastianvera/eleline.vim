@@ -216,6 +216,10 @@ function! s:StatusLine() abort
   let l:enc = ' %{&fenc != "" ? &fenc : &enc} | %{&bomb ? ",BOM " : ""}'
   let l:ff = '%{&ff} %*'
   let l:pct = '%#Eleline9# %P %*'
+  if get(g:, 'eleline_basic', 0)
+    return l:paste.l:common.'%='.l:m_r_f.l:pos.l:enc.l:pct
+  endif
+
   return l:prefix.l:tot.'%<'.l:fsize.l:common
         \ .'%='.l:m_r_f.l:pos.l:enc.l:ff.l:pct
 endfunction
